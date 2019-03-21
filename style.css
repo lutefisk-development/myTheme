@@ -1,0 +1,59 @@
+/*
+Theme Name: My Theme
+Author: Per Kristian Svanberg
+Description: A very basic theme, not so fancy.
+Version: 1.0
+License: WTFPL
+License URI: http://www.wtfpl.net/
+Text Domain: mytheme
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/**
+ * Generic Styles
+ */
+ nav {
+	margin-bottom: 1.5rem;
+}
+
+/**
+ * Content Styles
+ */
+h1 {
+	font-size: 1.75rem;
+	margin-bottom: 1.5rem;
+}
+
+.content h2 {
+	font-size: 1.5rem;
+}
+
+.content hr {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+/**
+ * Sidebar Styles
+ */
+.blog-sidebar aside {
+	border-bottom: 1px solid #ccc;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+.blog-sidebar aside:first-of-type {
+	margin-top: 0;
+}
+.blog-sidebar aside:last-of-type {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+/**
+ * Widget Styles
+ */
+.widget-title {
+	font-size: 1.25rem;
+	margin-bottom: 0.75rem;
+}

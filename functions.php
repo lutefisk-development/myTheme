@@ -85,3 +85,19 @@ function mt_register_scripts_and_styles() {
     );
 }
 add_action('wp_enqueue_scripts', 'mt_register_scripts_and_styles');
+
+/**
+ *  Theme Setup Declaration
+ */
+
+ function mt_theme_setup() {
+    // Add support for Featured Imeage
+    add_theme_support('post-thumbnails');
+
+    // Add image size for Blog Thumbnail
+    set_post_thumbnail_size(180, 0, false);
+
+    // Add image size for Single Post Featured Image
+    add_image_size('featured-image', 1110, 0, false);
+ }
+ add_action('after_setup_theme', 'mt_theme_setup');

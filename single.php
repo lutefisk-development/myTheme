@@ -10,6 +10,11 @@ get_header();
 				<!-- Yey, we has posts -->
 				<?php while (have_posts()) : the_post(); ?>
 					<!-- This is a Blog Post -->
+					<?php if(has_post_thumbnail()) : ?>
+						<div class="featured-image-wrapper">
+							<?php the_post_thumbnail('featured-image', ['class' => 'img-fluid d-block mx-auto']); ?>
+						</div>
+					<?php endif; ?>	
 					<h1><?php the_title(); ?></h1>
 
 					<?php the_content(); ?>
@@ -22,12 +27,7 @@ get_header();
 			<?php endif; ?>
 			<!-- End of posts -->
 		</div><!-- /.col-md-9 -->
-
-		<div class="col-md-3 blog-sidebar">
-			<!-- sidebar -->
-			<?php get_sidebar(); ?>
-			<!-- end sidebar -->
-		</div>
+		<?php get_sidebar(); ?>
 	</div><!-- /.row -->
 </div><!-- /.container -->
 

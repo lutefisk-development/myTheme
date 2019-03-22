@@ -23,12 +23,7 @@ get_header();
 			<?php endif; ?>
 			<!-- End of posts -->
 		</div><!-- /.col-md-9 -->
-
-		<div class="col-md-3">
-			<!-- sidebar -->
-			<?php get_sidebar(); ?>
-			<!-- end sidebar -->
-		</div><!-- /.col-md-3 -->
+		<?php get_sidebar(); ?>
 	</div><!-- /.row -->
 </div><!-- /.container -->
 

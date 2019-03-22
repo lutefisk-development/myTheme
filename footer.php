@@ -1,9 +1,11 @@
 
-		<div class="container">
-			<div class="row">
-				<?php get_sidebar('footer'); ?>
+		<footer class="site-footer">
+			<div class="container">
+				<div class="row">
+					<?php dynamic_sidebar('footer-sidebar');; ?>
+				</div>
 			</div>
-		</div>
+		</footer>
 		<?php wp_footer(); ?>
   	</body>
 </html>

@@ -25,8 +25,8 @@ function mt_widgets_init() {
     register_sidebar( array(
         'name'          => 'Footer Sidebar',
         'id'            => 'footer-sidebar',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s col">',
-        'after_widget'  => '</aside>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s col">',
+        'after_widget'  => '</div>',
         'before_title'  => '<h1 class="widget-title">',
         'after_title'   => '</h1>',
     ) );
@@ -37,11 +37,27 @@ add_action( 'widgets_init', 'mt_widgets_init' );
 
 
 function mt_register_scripts_and_styles() {
+    
+    /**
+     *  Styles
+     */
+
+
     // Add Bootstrap CSS
     wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', [], '4.3.1', 'all');
 
     // Add Theme CSS
     wp_enqueue_style('style', get_stylesheet_directory_uri() . '/style.css', ['bootstrap']);
+
+    // ====================================================================================
+
+    /**
+     *  Scripts
+     */
+
+
+    // Remove WordPress jQuery
+    wp_deregister_script('jquery');
 
     // Add Bootstrap JS
     wp_enqueue_script(

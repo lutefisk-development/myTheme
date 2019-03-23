@@ -31,7 +31,7 @@ get_header();
 			<?php endif; ?>
 			<!-- End of posts -->
 		</main><!-- /.col-md-9 -->
-
+		
 		<?php get_sidebar(); ?>
 	</section><!-- /.row -->
 </main><!-- /.container -->

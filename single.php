@@ -9,21 +9,10 @@ get_header();
 			<?php if (have_posts()) : ?>
 				<!-- Yey, we has posts -->
 				<?php while (have_posts()) : the_post(); ?>
-					<!-- This is a Blog Post -->
-					<?php if(has_post_thumbnail()) : ?>
-						<figure class="featured-image-wrapper">
-							<?php the_post_thumbnail('featured-image', ['class' => 'img-fluid d-block mx-auto']); ?>
-						</figure>
-					<?php endif; ?>	
-					<h1><?php the_title(); ?></h1>
-
-					<?php the_content(); ?>
-
-					<summary>Post Created: <?php echo get_the_date(); ?> by <?php the_author(); ?></summary>
-					<hr>
-
-					<!-- End of Blog Post -->
+					<?php get_template_part('template-parts/content', 'single'); ?>
 				<?php endwhile; ?>
+			<?php else: ?>
+				<?php get_template_part('template-parts/content', 'none'); ?>
 			<?php endif; ?>
 			<!-- End of posts -->
 		</article><!-- /.col-md-9 -->

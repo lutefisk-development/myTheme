@@ -2,7 +2,7 @@
 <section class="row">
 	<?php if(has_post_thumbnail()) : ?>
 		<figure class="col-sm-3">
-			<?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid']); ?>
+			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid']); ?></a>
 		</figure>
 	<?php endif; ?>	
 	<article class="col-sm">

@@ -1,5 +1,11 @@
 <?php
 
+ /*
+ =======================================================
+ 					ACTIONS:
+ =======================================================
+ */
+
 require('inc/bs4Navwalker.php');
 
 function mt_register_menus() {
@@ -108,8 +114,39 @@ add_action('wp_enqueue_scripts', 'mt_register_scripts_and_styles');
 
 	// Add image size for Single Post Featured Image
 	add_image_size('featured-image', 1110, 0, false);
- }
+
+
+		/**
+ 		* Theme Setup Custom Logo
+ 		*/
+
+	add_theme_support( 'custom-logo', [
+		'height'      => 40,
+		'width'       => 200,
+		'flex-height' => false,
+		'flex-width'  => true,
+		'header-text' => [ 'site-title', 'site-description' ],
+	 ]);
+}
  add_action('after_setup_theme', 'mt_theme_setup');
+
+function mt_the_custom_logo() {
+	$custom_logo_id = get_theme_mod('custom_logo');
+
+	$logo_url = wp_get_attachment_image_src($custom_logo_id, 'full');
+
+	if(has_custom_logo()) {
+		echo '<img src="'. $logo_url[0] .'" class="img-fluid" alt="Site-Logo" title="' . get_bloginfo('name') . '">';
+	} else {
+		bloginfo('name');
+	}
+}
+
+ /*
+ =======================================================
+ 					FILTERS:
+ =======================================================
+ */
 
  /**
   * Filter the content()

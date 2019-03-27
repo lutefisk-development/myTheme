@@ -13,8 +13,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /**
  * Generic Styles
  */
- nav {
-	margin-bottom: 1.5rem;
+ #main {
+	margin-top: 1.5rem;
 }
 
 /**
@@ -23,6 +23,20 @@ Use it to make something cool, have fun, and share what you've learned with othe
 h1 {
 	font-size: 1.75rem;
 	margin-bottom: 1.5rem;
+}
+
+.color-nav-bar {
+	background: #009fff; /* fallback for old browsers */
+  	background: -webkit-linear-gradient(to right, #009fff, #ec2f4b); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #009fff, #ec2f4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+	color: white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: #e8e8e8;
 }
 
 .content h2 {
@@ -78,4 +92,8 @@ footer .container {
 
 footer .widget {
 	background-color: #eee;
+}
+
+.card {
+	cursor: pointer;
 }

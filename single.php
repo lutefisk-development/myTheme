@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<main class="container">
+<main class="container" id="main">
 	<section class="row">
 		<article class="col-md-9">
 			<!-- Do we have any posts? -->

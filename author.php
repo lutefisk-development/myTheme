@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<main class="container">
+<main class="container" id="main">
 	<h1>Posts by author: <?php the_author(); ?></h1>
 
 	<section class="row">
@@ -10,12 +10,16 @@ get_header();
 			<!-- Do we have any posts? -->
 			<?php if (have_posts()) : ?>
 				<!-- Yey, we has posts -->
-				<?php while (have_posts()) : the_post(); ?>
-					<?php get_template_part('template-parts/content', 'excerpt'); ?>
-				<?php endwhile; ?>
-			<?php else : ?>
-				<?php get_template_part('template-parts/content', 'none'); ?>
-			<?php endif; ?>
+				<div class="card-group">
+					<div class="row">
+						<?php while (have_posts()) : the_post(); ?>
+							<?php get_template_part('template-parts/content', 'excerpt'); ?>
+						<?php endwhile; ?>
+					<?php else : ?>
+						<?php get_template_part('template-parts/content', 'none'); ?>
+					<?php endif; ?>
+					</div>
+				</div>
 			<!-- End of posts -->
 		</main><!-- /.col-md-9 -->
 		<?php get_sidebar(); ?>

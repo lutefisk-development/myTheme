@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light color-nav-bar">
 	<main class="container">
 		<a class="navbar-brand" href="/">
 			<?php mt_the_custom_logo(); ?>

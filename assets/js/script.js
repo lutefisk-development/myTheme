@@ -3,8 +3,10 @@
 		// This will be run when DOM has signaled that it has finished rendering all elements
 		$('.card').on('click', function() {
 			
-			window.location = $(this).find("a").attr("href");
-			return false;
+			var $a = $(this).find('a');
+			if ($a.length > 0) {
+				window.location.href = $a.attr('href');
+			}
 
 		});
 	});

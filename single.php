@@ -10,6 +10,7 @@ get_header();
 				<!-- Yey, we has posts -->
 				<?php while (have_posts()) : the_post(); ?>
 					<?php get_template_part('template-parts/content', 'single'); ?>
+					<?php get_template_part('template-parts/latest-posts'); ?>
 				<?php endwhile; ?>
 			<?php else: ?>
 				<?php get_template_part('template-parts/content', 'none'); ?>

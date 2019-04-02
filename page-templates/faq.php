@@ -1,7 +1,7 @@
-<?php
-/* Template Name: FAQ page */
-get_header();
-?>
+	<?php
+	/* Template Name: FAQ page */
+	get_header();
+	?>
 
 <article class="container" id="main">
 	<!-- Do we have a page? -->

@@ -2,6 +2,8 @@
 	// hämta ut alla blogginlägg från kategorin med slug:en 'faq'
 	$faq_query = new WP_Query([
 		'category_name' => 'faq',
+		'orderby' => 'title',
+		'order' => 'ASC'
 	]);
 	// om det finns några blogginlägg, starta en accordion
 	if ($faq_query->have_posts()) {
@@ -15,7 +17,7 @@
 							<!-- Single FAQ start -->
 							<div class="card">
 								<div class="card-header">
-									<h2 class="mb-0">
+										<h2 class="mb-0">
 										<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq-<?php the_ID(); ?>">
 											<?php the_title(); ?>
 										</button>

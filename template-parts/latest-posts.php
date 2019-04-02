@@ -1,13 +1,27 @@
 <?php
 	// Hamta de 3 senaste blogginläggen, oavsätt kategori
+	
+	// $categoryItems = get_the_category(get_the_ID());
+	
+	// $categoryIds = [];
+
+	// foreach($categoryItems as $categoryItem) {
+	// 	array_push($categoryIds, $categoryItem->cat_ID);
+	// }
+
+	
+	$categoryIds = wp_get_post_categories(get_the_ID());
 	$latest_post_query = new WP_Query([
-		'post_type' => 'post',
+		// 'post_type' => 'post',
 		'posts_per_page' => 3,
+		'post__not_in' => [get_the_ID()],
+		'category__in' => $categoryIds
+
 	]);
 
 	if($latest_post_query->have_posts()) {
 		?>
-			<h2>Latest Posts</h2>
+			<h2>Latest Related Posts</h2>
 			<div class="card-group">
 				<div class="row">
 					<?php

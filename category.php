@@ -15,6 +15,7 @@ get_header();
 						<?php while (have_posts()) : the_post(); ?>
 							<?php get_template_part('template-parts/content', 'excerpt'); ?>
 						<?php endwhile; ?>
+						<?php get_template_part('template-parts/posts-pagination'); ?>
 					<?php else : ?>
 						<?php get_template_part('template-parts/content', 'none'); ?>
 					<?php endif; ?>

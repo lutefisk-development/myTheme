@@ -12,3 +12,7 @@
 	<?php the_content(); ?>
 </article>
 <!-- End of Blog Post -->
+
+<!-- Paginatiopn -->
+<?php get_template_part('template-parts/post-pagination'); ?>
+<!-- End of Pagination -->

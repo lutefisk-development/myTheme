@@ -1,9 +1,9 @@
-<?php
-	// hämta ut alla blogginlägg från kategorin med slug:en 'faq'
+<?php	
 	$faq_query = new WP_Query([
 		'category_name' => 'faq',
 		'orderby' => 'title',
-		'order' => 'ASC'
+		'order' => 'ASC',
+		'paged' => get_query_var( 'paged' ),
 	]);
 	// om det finns några blogginlägg, starta en accordion
 	if ($faq_query->have_posts()) {
@@ -33,9 +33,18 @@
 							<!-- Single FAQ end -->
 						<?php
 					}
+					
 				?>
 			</div><!-- End of Accordion -->
-		<?php
+				<div class="pagination-links d-flex justify-content-between">
+					<div class="previous-page">
+						<?php previous_posts_link('Older Entries'); ?>
+					</div>
+					<div class="next-page">
+						<?php next_posts_link('Newer Entries', $faq_query->max_num_pages); ?>
+					</div>
+				</div>
+			<?php 
 		// reset postdata to main loop
 		wp_reset_postdata();
 	} else {

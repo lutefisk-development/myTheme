@@ -17,6 +17,7 @@ get_header();
 						<?php endwhile; ?>
 					</div>
 				</div>
+				<?php get_template_part('template-parts/posts-pagination'); ?>
 			<?php else :?>
 				<?php get_template_part('template-parts/content', 'none'); ?>
 			<?php endif; ?>

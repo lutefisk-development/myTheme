@@ -7,6 +7,7 @@
  */
 
 require('inc/bs4Navwalker.php');
+require('inc/pagination.php');
 
 function mt_register_menus() {
 	register_nav_menus([
@@ -195,7 +196,9 @@ function mt_the_custom_logo() {
 		return str_ireplace($badWords, $cleanWords, $content);
 	}
 	add_filter('the_content', 'mt_filter_the_content_for_profanity', 10, 1);
-		
+	add_filter('the_title', 'mt_filter_the_content_for_profanity', 10, 1);
+	add_filter('the_excerpt', 'mt_filter_the_content_for_profanity', 10, 1);
+
   /**
    * Restrict the_excerpt to 20 words
    */
@@ -234,3 +237,4 @@ function mt_the_custom_logo() {
 	}
   }
   add_action('pre_get_posts', 'mt_exclude_faq_posts');
+

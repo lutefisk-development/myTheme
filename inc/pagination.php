@@ -17,13 +17,13 @@ if ( ! function_exists( 'b4st_pagination' ) ) {
 			'total' => $wp_query->max_num_pages,
 			'mid_size' => 5,
 			'prev_next' => True,
-			'prev_text' => __('<i class="fas fa-angle-left"></i> Newer', 'b4st'),
-			'next_text' => __('Older <i class="fas fa-angle-right"></i>', 'b4st'),
+			'prev_text' => __('<i class="fas fa-angle-left"></i> Newer', 'mytheme'),
+			'next_text' => __('Older <i class="fas fa-angle-right"></i>', 'mytheme'),
 			'type' => 'list'
 		) );
 		$paginate_links = str_replace( "<ul class='page-numbers'>", "<ul class='pagination'>", $paginate_links );
-    $paginate_links = str_replace( "<li>", "<li class='page-item'>", $paginate_links );
-    $paginate_links = str_replace( "<li class='page-item'><span aria-current='page' class='page-numbers current'>", "<li class='page-item active'><a class='page-link' href='#'>", $paginate_links );
+		$paginate_links = str_replace( "<li>", "<li class='page-item'>", $paginate_links );
+    	$paginate_links = str_replace( "<li class='page-item'><span aria-current='page' class='page-numbers current'>", "<li class='page-item active'><a class='page-link' href='#'>", $paginate_links );
 		$paginate_links = str_replace( "<a", "<a class='page-link' ", $paginate_links );
 
 		$paginate_links = str_replace( "</span>", "</a>", $paginate_links );

@@ -148,8 +148,9 @@ add_action('wp_enqueue_scripts', 'mt_register_scripts_and_styles');
 		'flex-width'         => true,
 		'flex-height'        => true,
 	]);
-	
-	
+
+	// add i18n
+	load_theme_textdomain( 'mytheme', get_template_directory() . '/languages' );
 }
 add_action('after_setup_theme', 'mt_theme_setup');
 

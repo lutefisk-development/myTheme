@@ -1,1 +1,1 @@
-<p><em>Sorry, no posts could be found.</em></p>
+<p><em><?php _e('Sorry, no posts could be found.', 'mytheme'); ?></em></p>

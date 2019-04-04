@@ -11,9 +11,16 @@
 				<?php the_excerpt(); ?>
 			</div>
 		</article>
-		<div class="card-footer">
-			<summary class="text-small"><small class="text-muted">Post Created: <?php echo get_the_date(); ?> by <?php the_author_posts_link(); ?> in <?php the_category(', '); ?></small></summary>
-		</div>
+			<div class="card-footer">
+				<summary class="text-small"><small class="text-muted">
+					<?php
+						printf(__('Post Created: %s by %s in %s', 'mytheme'),
+						get_the_date(),
+						get_the_author_posts_link(),
+						get_the_category_list(', '));
+					?>
+				</small></summary>
+			</div>
 	</section>
 </div>
 <!-- End of Blog Post -->

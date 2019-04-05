@@ -3,6 +3,7 @@
 ?>
 
 <article class="container" id="main">
+	<h1><?php _e('Frequently Asked Questions: ', 'mytheme'); ?></h1>
 	<?php if(have_posts()) : ?>
 		<div class="accordion" id="accordionFAQ">
 		<?php while (have_posts()) : the_post(); ?>

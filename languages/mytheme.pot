@@ -8,7 +8,7 @@ msgstr ""
 "Blank WordPress Pot "
 "v1.0.0\n"
 "POT-Creation-Date: "
-"2019-04-04 20:55+0200\n"
+"2019-04-05 09:59+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Your "
 "Name <you@example.com>\n"
@@ -57,7 +57,13 @@ msgid ""
 "missing!"
 msgstr ""
 
-#: archive-mt_faq.php:26
+#: archive-mt_faq.php:6
+msgid ""
+"Frequently Asked "
+"Questions: "
+msgstr ""
+
+#: archive-mt_faq.php:27
 #: template-parts/accordion-faq.php:52
 msgid ""
 "Sorry, no FAQs found."

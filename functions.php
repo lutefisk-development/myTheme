@@ -226,16 +226,3 @@ function mt_the_custom_logo() {
 	return $excerpt;
   }
   add_filter('the_excerpt', 'mt_filter_excerpt_more_link', 999, 1);
-
-  /**
-   * Modify all get posts queries
-   */
-  function mt_exclude_faq_posts($query) {
-	if($query->is_home() /* && $query->is_main_query() */) {
-		$faq_category = get_category_by_slug('faq');
-		$faq_category_id = $faq_category->term_id;
-		$query->set('cat', '-' . $faq_category_id);
-	}
-  }
-  add_action('pre_get_posts', 'mt_exclude_faq_posts');
-
